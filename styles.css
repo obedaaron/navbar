@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #000;
+    color: #fff;
+    font-family: poppins, sans-serif;
+    height: 2000px;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    background: rgba(28, 28, 28, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background o.3s ease;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.logo-icon {
+  font-size: 1.9rem;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links li{
+    position: relative;
+}
+
+.nav-links li a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: #00b4ff;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1c1c1c;
+    border-radius: 8px;
+    padding: 10px 0;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    list-style: none;
+}
+
+.dropdown-menu li a{
+    padding: 10px 20px;
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover{
+   background: #292929;
+   color: #00b4ff
+}
+
+.dropdown:hover .dropdown-menu{
+    display: flex;
+}
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span{
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px){
+    .hamburger{
+        display: flex;
+    }
+
+    .nav-links{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(28, 28, 28, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        display: none;
+        text-align: center;
+    }
+
+    .nav-links li{
+        width: 100%;
+    }
+
+    .dropdown-menu{
+        position: static;
+        display: none;
+        background: transparent;
+        padding: 0;
+    }
+
+    .dropdown.open .dropdown-menu{
+        display: flex;
+    }
+
+    .dropdown-menuli a{
+        padding: 10px;
+    }
+
+    .navbar-scrolled{
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
