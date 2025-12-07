@@ -8,8 +8,9 @@
 </head>
 <body>
     <header class="navbar" id="navbar">
+        <div id="sidebarToggle" class="sidebar-toggle">☰</div>
         <div class="nav-container">
-            <div class="logo">Aaron11</div>
+            <div class="logo">Aaron</div>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#">Home</a></li>
@@ -42,8 +43,33 @@
                 <span></span>
             </div>
         </div>
+        
+        <!--Sidebar section-->
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+                <span id="closeSidebar" class="close-btn"></span>
+            </div>
+
+            <ul class="sidebar-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+
+                <li class="sidebar-dropdown">
+                    <a href="@" class="side-drop-btn">More</a>
+
+                    <ul class="sidebar-submenu">
+                        <li><a href="#">Activity</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Themes</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
     </header>
     <script src="script.js"></script>
 </body>
-
 </html>
