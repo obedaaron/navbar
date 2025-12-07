@@ -108,6 +108,75 @@ body{
     transition: 0.3s;
 }
 
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 260px;
+    height: calc(100% - 70px);
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    z-index: 900;
+    transition: none;
+}
+
+.sidebar.open{
+    left: 0;
+}
+
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.close-btn{
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.sidebar-links{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-links li a{
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 0;
+    transition: 0.3s;
+}
+
+.sidebar-links a:hover{
+    color: #00b4ff
+}
+
+.sidebar-submenu{
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+.sidebar-dropdown.open .sidebar-submenu{
+    display: flex;
+}
+
+.sidebar-toggle{
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 20px;
+    display: none;
+    color: #fff;
+}
+
 @media (max-width: 768px){
     .hamburger{
         display: flex;
@@ -148,5 +217,13 @@ body{
 
     .navbar-scrolled{
         background: rgba(0, 0, 0, 0.9);
+    }
+
+    .sidebar {
+        left: -260px;
+    }
+    
+    .sidebar.open {
+        left: 0;
     }
 }
